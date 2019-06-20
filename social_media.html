@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <title>Centered Nav</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0
+        }
+        
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+            background-color: #000;
+            padding: 0 30px;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-nav li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-nav a {
+            display: block;
+            text-decoration: none;
+            padding: 10px;
+            color: #fff;
+        }
+        
+        .logo {
+            color: #fff;
+        }
+        
+        .toggle-nav {
+            display: none;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .main-nav {
+                flex-direction: column;
+                width: 100%;
+            }
+            .logo {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                order: -1;
+            }
+            .main-nav ul {
+                display: none;
+            }
+            .toggle-nav {
+                display: block;
+            }
+            .main-nav ul {
+                width: 100%;
+            }
+            .main-nav a {
+                width: 100%;
+                text-align: center;
+                border-top: 1px solid #fff;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            $('.toggle-nav').css('cursor', 'pointer').click(function() {
+
+                $('.main-nav ul').slideToggle();
+
+            });
+
+            $(window).resize(function() {
+
+                var width = $(document).width();
+
+                if (width > 768) {
+
+                    $('.main-nav ul').css('display', 'flex');
+
+                }
+
+                if (width <= 768) {
+
+                    $('.main-nav ul').css('display', 'none');
+
+                }
+
+            });
+
+
+
+        });
+    </script>
+
+</head>
+
+
+
+<body>
+
+    <nav class="main-nav">
+
+        <ul>
+
+            <li><a href="#">Food</a></li>
+
+            <li><a href="#">Location</a></li>
+
+        </ul>
+
+        <div class="logo">
+
+            <h4>Logo</h4>
+
+            <div class="toggle-nav"><i class="fas fa-bars"></i></div>
+
+        </div>
+
+        <ul>
+
+            <li><a href="#">Contact</a></li>
+
+            <li><a href="#">Icon</a></li>
+
+            <li><a href="#">Icon</a></li>
+
+        </ul>
+
+
+
+    </nav>
+
+</body>
+
+</html>

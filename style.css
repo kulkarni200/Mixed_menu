@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Tahoma, Verdana, Geneva, sans-serif;
+    /* So 1rem = 20px; */
+    font-size: 20px;
+}
+
+.navbar {
+    background-color: #444444;
+    min-height: 3em;
+}
+
+a,
+.logo {
+    text-decoration: none;
+    color: #f0e2bc;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-left: .5em;
+    letter-spacing: 3px;
+}
+
+.navbar-toggle {
+    cursor: pointer;
+    color: #f0e2bc;
+    font-size: 1.7em;
+    margin-right: 0.5em;
+    order: 3;
+}
+
+.main-nav {
+    list-style-type: none;
+    display: none;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+.main-nav li {
+    font-size: 1.1em;
+    border: 2px solid #f0e2bc;
+    border-radius: 1.3em;
+    margin-bottom: 3px;
+}
+
+.main-nav li a {
+    width: 100%;
+}
+
+.nav-links {
+    letter-spacing: 2px;
+    font-size: 0.9em;
+}
+
+
+/* flexbox style rules */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    order: 1;
+}
+
+.main-nav {
+    flex-direction: column;
+    flex-basis: 10em;
+    order: 2;
+}
+
+.navbar-toggle {
+    order: 3;
+}
+
+.main-nav li {
+    display: flex;
+    justify-content: flex-start;
+    flex-basis: 2.3em;
+}
+
+.main-nav li a {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    flex: 0 0 1.3em;
+    align-self: center;
+}
+
+.nav-links {
+    align-self: center;
+}
+
+.active {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .navbar-toggle {
+        display: none;
+    }
+    .main-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-basis: 16rem;
+        border: 1px solid gold;
+    }
+    .main-nav li {
+        flex: 1 0 6rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    .navbar {
+        height: 4rem;
+        align-items: center;
+    }
+    .main-nav {
+        flex-basis: 43rem;
+        flex-wrap: nowrap;
+        height: 2rem;
+        /* required for center alinment with logo */
+        margin-top: 0;
+    }
+}
